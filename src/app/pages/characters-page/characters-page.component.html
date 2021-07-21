@@ -1,0 +1,11 @@
+<section class="c-gallery" *ngIf="characters">
+    <ngx-simplebar>
+        <div class="c-gallery__container d-flex flex-wrap justify-content-center">
+            <div *ngFor="let character of characters" routerLink="/characters/{{ character.name }}"
+                class="c-gallery__div col d-flex align-items-center flex-column p-1">
+                <img src="{{ character.image }} " alt="{{ character.name }} " class="c-gallery__img" />
+                <h3 Class="c-gallery__title">{{ character.name }}</h3>
+            </div>
+        </div>
+    </ngx-simplebar>
+</section>

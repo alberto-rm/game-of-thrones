@@ -1,0 +1,193 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.c-chrono {
+  margin: 35px 90px 35px 156px;
+  text-align: center;
+  position: relative;
+
+  @include media-breakpoint-down(xl) {
+    margin: 35px 47px 35px 80px;
+  }
+
+  &__separator {
+    margin-top: 83px;
+  }
+
+  &__container {
+    margin-right: 66px;
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
+  }
+
+  &__img {
+    object-position: top;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__input {
+    position: fixed;
+    top: 100px;
+    text-align: center;
+    background-color: var(--color-background);
+    border: solid 3px var(--color-primary);
+    border-radius: 50%;
+    width: 59px;
+    height: 59px;
+    margin-right: 66px;
+    color: var(--color-primary);
+    font-size: 24px;
+    font-family: "georgia";
+    z-index: 999;
+
+    &:focus {
+      outline-width: 0;
+    }
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
+
+    &:hover {
+      border-color: var(--color-grey);
+    }
+  }
+
+  &__arrow {
+    margin-right: 66px;
+    font-size: 42px;
+    position: fixed;
+    top: 160px;
+    z-index: 999;
+
+    @include media-breakpoint-down(xl) {
+      margin-right: 33px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--color-grey);
+    }
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__age {
+    font-family: "georgia";
+    font-size: 24px;
+  }
+}
+
+ngx-simplebar {
+  height: 72vh;
+}
+
+::ng-deep .simplebar-scrollbar::before {
+  background-color: white !important;
+}
+
+// Styles chronology
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.timeline {
+  position: relative;
+  width: 70%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background: #ffffff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.contenedor {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.contenedor.left {
+  left: 0;
+}
+
+.contenedor.right {
+  left: 50%;
+}
+
+.contenedor.right::after {
+  left: -8px;
+}
+
+.contenedor::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0px;
+  right: 0px;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.contenedor.right::before {
+  left: 0px;
+}
+
+.contenedor .content {
+  padding: 0px 30px 0px 30px;
+  position: relative;
+}
+
+.contenedor.right .content {
+  padding: 0px 30px 0px 30px;
+}
+
+.contenedor .content p {
+  margin: 0 0 10px 0;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+  .contenedor {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .contenedor.right {
+    left: 0%;
+  }
+  .contenedor.left::after,
+  .contenedor.right::after {
+    left: 82px;
+  }
+  .contenedor.left .content,
+  .contenedor.right .content {
+    padding: 0px 30px 0px 30px;
+  }
+  .timeline::after {
+    background: transparent;
+  }
+}

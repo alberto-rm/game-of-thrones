@@ -1,0 +1,30 @@
+.c-house {
+  &__block {
+    margin-bottom: 30px;
+  }
+
+  &__img {
+    width: 248px;
+    height: 320px;
+    background-position: top;
+    background-size: cover;
+    object-fit: cover;
+    object-position: top;
+  }
+  &__name {
+    font-size: 36px;
+  }
+  &__row {
+    margin: 0 80px;
+  }
+  &__info {
+    text-align: center;
+  }
+  &__title-desc {
+    font-size: 24px;
+  }
+  &__text {
+    font-family: "lato";
+    font-size: 16px;
+  }
+}

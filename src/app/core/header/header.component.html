@@ -1,0 +1,26 @@
+<div class="c-header" [ngClass]="{'justify-content-end' : !detailPage && !gallery}">
+  <div *ngIf="detailPage" mat-raised-button (click)="goBack()"
+    class="c-header__back d-flex justify-content-between align-items-center">
+    <span class="c-header__back-icon icon-back"></span>
+    <span class="c-header__back-text">{{ 'Volver' | translate}}</span>
+  </div>
+  <div *ngIf="!detailPage && gallery" class="c-header__search">
+    <span class="c-header__search-icon icon-search"></span>
+    <input [(ngModel)]="input" (input)="newMessage()" type="text" class="c-header__text" data-function="search-bar"
+      placeholder="{{'Buscar' | translate}}..." />
+    <p class="c-header__p"></p>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="c-header__icons d-flex justify-content-between align-items-center">
+
+      <a class="c-header__link" routerLink="" routerLinkActiveOptions="{exact:true}"><span
+          class="c-header__home icon-home align-self-center"></span></a>
+
+      <img (click)="changeLang('es')" class="c-header__spanish " src="../../assets/images/spain.png"
+        onclick="setSrc('main-image', this.src)">
+
+      <img (click)="changeLang('en')" class="c-header__english" src="../../assets/images/uk.png" id="main-image">
+    </div>
+  </div>
+</div>

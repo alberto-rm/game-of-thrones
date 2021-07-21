@@ -1,0 +1,24 @@
+<section class="c-chrono" *ngIf="charactersFiltered">
+    <ngx-simplebar>
+        <div class="c-chrono__separator d-flex flex-column justify-content-center align-items-center">
+            <input [(ngModel)]="age" (input)="ageFilter()" type="text" class="c-chrono__input">
+            <span (click)="changeOrder()" class="c-chrono__arrow icon-down"
+                [ngClass]="{'c-chrono__arrow--rotate': firstOld === true}"></span>
+        </div>
+        <div class="c-chrono__container" *ngFor="let character of charactersFiltered; let i = index">
+            <div class="timeline">
+                <div class="contenedor" [ngClass]="i % 2 ? 'right' : 'left'">
+                    <div class="content">
+                        <p class="c-chrono__age">
+                            {{ character.age.age }}
+                        </p>
+                        <p>
+                            {{ character.name }}
+                        </p>
+                        <img class="c-chrono__img" src="{{ character.image }}" alt="{{ character.name }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngx-simplebar>
+</section>

@@ -1,0 +1,41 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+.c-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 64px;
+  display: flex;
+  justify-content: center;
+
+  &__nav {
+    width: calc(100% - 300px);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-down(xl) {
+      width: calc(100% - 160px);
+    }
+  }
+
+  &__link {
+    font-family: "got1";
+    color: var(--color-primary);
+    font-size: 36px;
+    text-decoration: none;
+
+    &--active {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include media-breakpoint-down(xl) {
+      font-size: 24px;
+    }
+  }
+}

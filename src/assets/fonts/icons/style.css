@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'got-icons';
+  src:
+    url('fonts/got-icons.ttf?o3i93l') format('truetype'),
+    url('fonts/got-icons.woff?o3i93l') format('woff'),
+    url('fonts/got-icons.svg?o3i93l#got-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'got-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-down:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-back:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-home:before {
+  content: "\e901";
+}
+.icon-search:before {
+  content: "\e903";
+}

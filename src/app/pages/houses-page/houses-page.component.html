@@ -1,0 +1,15 @@
+<section class="c-houses">
+    <ngx-simplebar>
+        <div class="c-houses__container d-flex justify-content-center flex-wrap">
+            <figure *ngFor=" let house of houses" class="c-houses__house d-flex flex-column col">
+                <a class="c-houses__link d-flex flex-column justify-content-between"
+                    routerLink="/houses/{{house.name}}">
+                    <div class="d-flex justify-content-center">
+                        <img src="{{house.logoURL}}" alt="{{house.name}}" class="c-houses__img">
+                    </div>
+                    <figcaption class="c-houses__text">{{house.name}}</figcaption>
+                </a>
+            </figure>
+        </div>
+    </ngx-simplebar>
+</section>

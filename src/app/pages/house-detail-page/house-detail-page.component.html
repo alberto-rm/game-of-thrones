@@ -1,0 +1,51 @@
+<section *ngIf="house" class="c-house">
+    <div class="row c-house__row">
+        <div class="col d-flex justify-content-center flex-column align-items-center">
+            <img src="{{ house.logoURL }}" alt="{{ house.name }}" class="c-house__img" />
+            <h2 class="c-house__name">{{ house.name }}</h2>
+        </div>
+        <div class="d-flex justify-content-center flex-wrap c-house__info">
+            <div class="c-house__block col-12 col-md-6 col-lg-4 col-xxl-2">
+                <h2 class="c-house__title-desc">{{ "LEMA" | translate }}</h2>
+                <p class="c-house__text">
+                    {{ house.sigil }}
+                </p>
+            </div>
+            <div class="c-house__block col-12 col-md-6 col-lg-4 col-xxl-2">
+                <h2 class="c-house__title-desc">{{ "SEDE" | translate }}</h2>
+                <p *ngFor="let seat of house.seat" class="c-house__text">
+                    {{ seat }}
+                </p>
+            </div>
+            <div class="c-house__block col-12 col-md-6 col-lg-4 col-xxl-2">
+                <h2 class="c-house__title-desc">{{ "REGION" | translate }}</h2>
+                <p *ngFor="let region of house.region" class="c-house__text">
+                    {{ region }}
+                </p>
+            </div>
+            <div class="c-house__block col-12 col-md-6 col-lg-4 col-xxl-2">
+                <h2 class="c-house__title-desc">{{ "ALIANZAS" | translate }}</h2>
+                <p *ngFor="let allegiance of house.allegiance" class="c-house__text">
+                    {{ allegiance }}
+                </p>
+            </div>
+            <div class="c-house__block col-12 col-md-6 col-lg-4 col-xxl-2">
+                <h2 class="c-house__title-desc">{{ "RELIGIONES" | translate }}</h2>
+
+                <p *ngFor="let religion of house.religion" class="c-house__text">
+                    {{ religion }}
+                </p>
+            </div>
+            <div class="c-house__block col-12 col-md-6 col-lg-4 col-xxl-2">
+                <h2 class="c-house__title-desc">{{ "FUNDACION" | translate }}</h2>
+
+                <p class="c-house__text">
+                    {{ house.createdAt | date: "dd/MM/YY" }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</section>
